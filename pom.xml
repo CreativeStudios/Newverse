@@ -29,18 +29,26 @@
   </dependencies>
   <build>
   <plugins>
-  <plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-jar-plugin</artifactId>
-  <version>2.4</version>
-  <configuration>
-	<archive>
-		<manifest>
-			<mainClass>tk.creativevg.Newverse.MainMenu</mainClass>
-		</manifest>
-	</archive>
-  </configuration>
- </plugin>
+        <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>2.1</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <transformers>
+                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                  <mainClass>tk.creativevg.Newverse.MainClass</mainClass>
+                </transformer>
+              </transformers>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
  <plugin>
     <artifactId>maven-assembly-plugin</artifactId>
     <executions>
