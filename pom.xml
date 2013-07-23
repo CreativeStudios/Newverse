@@ -42,7 +42,7 @@
             <configuration>
               <transformers>
                 <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                  <mainClass>tk.creativevg.Newverse.MainClass</mainClass>
+                  <mainClass>tk.creativevg.Newverse.MainMenu</mainClass>
                 </transformer>
               </transformers>
             </configuration>
